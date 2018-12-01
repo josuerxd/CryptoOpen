@@ -287,7 +287,7 @@ String fl1=fl.toString();
 jTextField1.setText(fl1);
 }
 catch(Exception e){
-}        // TODO add your handling code here:
+}      
     }//GEN-LAST:event_jLabel8MousePressed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

@@ -535,7 +535,7 @@ jRadioButton2.setSelected(true);
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Created by:");
 
-        jLabel6.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Mohit");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

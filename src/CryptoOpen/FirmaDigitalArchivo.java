@@ -15,6 +15,7 @@ import java.security.KeyPairGenerator;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.security.SecureRandom;
+import java.security.Security;
 import java.security.Signature;
 import java.security.spec.X509EncodedKeySpec;
 import javax.swing.JFileChooser;
@@ -31,6 +32,7 @@ public class FirmaDigitalArchivo extends javax.swing.JFrame {
 */
 public FirmaDigitalArchivo() {
 initComponents();
+	Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
 setIconImage(Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/org/book/ico/cryptoopen.png")));
 }
 
@@ -243,7 +245,7 @@ try {
 // Get instance and initialize a KeyPairGenerator object.
 KeyPairGenerator keyGen = KeyPairGenerator.getInstance("DSA", "SUN");
 SecureRandom random = SecureRandom.getInstance("SHA1PRNG", "SUN");
-keyGen.initialize(4096, random);
+keyGen.initialize(1024, random);
 
 // Get a PrivateKey from the generated key pair.
 KeyPair keyPair = keyGen.generateKeyPair();
