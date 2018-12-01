@@ -52,7 +52,7 @@ this.setLocationRelativeTo(null);
         setTitle("CRYPTOZIP");
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(33, 33, 33));
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Direccion Entrada:");

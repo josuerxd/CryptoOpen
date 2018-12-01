@@ -308,9 +308,9 @@ return rsp;
         setTitle("STEGANO-IMAGE");
         setResizable(false);
 
-        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel2.setBackground(new java.awt.Color(33, 33, 33));
 
-        jPanel4.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel4.setBackground(new java.awt.Color(33, 33, 33));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Imagen Original", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 16), new java.awt.Color(255, 255, 255))); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -324,7 +324,7 @@ return rsp;
             .addComponent(l, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(33, 33, 33));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Mensaje", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 16), new java.awt.Color(255, 255, 255))); // NOI18N
 
         message.setColumns(20);
@@ -387,7 +387,7 @@ return rsp;
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Created by:");
 
-        jLabel6.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Mohit");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
