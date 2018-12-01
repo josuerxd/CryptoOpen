@@ -1,5 +1,4 @@
 package CryptoOpen;
-
 import org.cryptoopen.criptografia.Algoritmos;
 import java.awt.Toolkit;
 import java.io.UnsupportedEncodingException;
@@ -25,6 +24,9 @@ import javax.swing.JOptionPane;
 import org.apache.commons.codec.DecoderException;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.binary.Hex;
+import static org.cryptoopen.criptografia.Algoritmos.md5;
+import static org.cryptoopen.criptografia.Algoritmos.sha256;
+import static org.cryptoopen.criptografia.Algoritmos.sha512;
 
 /**
 *
@@ -56,9 +58,9 @@ keySize=key;
 Algoritmos ob=new Algoritmos();
 String esp="";
 String respuesta="";
-String salt=Sha256(ky);
-String iv=MD5(ky);
-String passphrase=Sha512(ky);
+String salt=sha256(ky);
+String iv=md5(ky);
+String passphrase=sha512(ky);
 respuesta=encrypt(salt,iv,passphrase,texto);
 return respuesta;
 }
@@ -70,9 +72,9 @@ String esp="";
 
 
 String respuesta="";
-String salt=Sha256(ky);
-String iv=MD5(ky);
-String passphrase=Sha512(ky);
+String salt=sha256(ky);
+String iv=md5(ky);
+String passphrase=sha512(ky);
 respuesta=decrypt2(salt,iv,passphrase,texto);
 return respuesta;
 }
@@ -164,68 +166,7 @@ return new IllegalStateException(e);
 }
 
 
-private static String MD5(String texto) throws UnsupportedEncodingException{
-MessageDigest md = null;
-String s = null;
-try {
-//SHA-512
-String encripcion;
-md= MessageDigest.getInstance("MD5");
-md.update(texto.getBytes());
-byte[] mb = md.digest();
-//  System.out.println((Hex.encodeHex(mb)));
-char [] dds=(Hex.encodeHex(mb));
-s = new String(dds);
-
-//  System.out.println((Arrays.toString(Hex.encodeHex(mb))));
-} catch (NoSuchAlgorithmException e) {
-//Error
-} 
-return s;
-}
-
-private static String Sha256(String texto) throws UnsupportedEncodingException{
-MessageDigest md = null;
-String s = null;
-try {
-//SHA-512
-String encripcion;
-md= MessageDigest.getInstance("SHA-256");
-md.update(texto.getBytes());
-byte[] mb = md.digest();
-//  System.out.println((Hex.encodeHex(mb)));
-char [] dds=(Hex.encodeHex(mb));
-s = new String(dds);
-
-//  System.out.println((Arrays.toString(Hex.encodeHex(mb))));
-} catch (NoSuchAlgorithmException e) {
-//Error
-} 
-return s;
-}
-
-private static String Sha512(String texto) throws UnsupportedEncodingException{
-MessageDigest md = null;
-String s = null;
-try {
-//SHA-512
-String encripcion;
-md= MessageDigest.getInstance("SHA-512");
-md.update(texto.getBytes());
-byte[] mb = md.digest();
-//  System.out.println((Hex.encodeHex(mb)));
-char [] dds=(Hex.encodeHex(mb));
-s = new String(dds);
-
-//  System.out.println((Arrays.toString(Hex.encodeHex(mb))));
-} catch (NoSuchAlgorithmException e) {
-//Error
-} 
-return s;
-}
-
-
-    @SuppressWarnings("unchecked")
+@SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
