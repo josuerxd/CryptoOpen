@@ -37,6 +37,22 @@ public class AES extends javax.swing.JFrame {
 private static  int keySize=256;
 private static final int iterationCount=10000;
 private static Cipher cipher;  
+
+    public static int getKeySize() {
+        return keySize;
+    }
+
+    public static void setKeySize(int keySize) {
+        AES.keySize = keySize;
+    }
+
+    public static Cipher getCipher() {
+        return cipher;
+    }
+
+    public static void setCipher(Cipher cipher) {
+        AES.cipher = cipher;
+    }
 /**
 * Creates new form AES
 */
@@ -44,7 +60,8 @@ public AES() {
 setIconImage(Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/org/book/ico/cryptoopen.png")));
 
 try {
-cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+//cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+setCipher(Cipher.getInstance("AES/CBC/PKCS5Padding"));
 }catch (NoSuchAlgorithmException | NoSuchPaddingException e) {
 throw fail(e);
 }
@@ -69,8 +86,6 @@ public static String decryptaes(String texto,String ky,int key) throws Unsupport
 keySize=key;
 Algoritmos ob=new Algoritmos();
 String esp="";
-
-
 String respuesta="";
 String salt=sha256(ky);
 String iv=md5(ky);
