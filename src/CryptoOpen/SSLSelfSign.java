@@ -847,7 +847,7 @@ save.write(jTextArea1.getText());
 save.close();
 
 FileWriter  save2=new FileWriter(guarda+".key");
-save2.write(jTextArea1.getText());
+save2.write(jTextArea2.getText());
 save2.close();
 
 JOptionPane.showMessageDialog(null,
